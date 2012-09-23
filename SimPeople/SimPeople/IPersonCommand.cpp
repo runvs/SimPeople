@@ -50,8 +50,7 @@ void IPersonCommand::DoAction(std::string strActionName)
 
 
  void IPersonCommand::CheckForActionFound(std::string strAction)
-{
-	std::cout << "Finishing Search for ActionString" << std::endl;
+ {
 	if (!m_bStringHasBeenFound)
 	{
 		if ( strAction != "TestAction")

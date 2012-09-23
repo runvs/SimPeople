@@ -37,27 +37,27 @@ void BasicNeedPersonCommand::SearchAndPerformAction (std::string strAction)
 {
 	if ( strAction == "getfood")
 	{
-		BasicNeedPersonCommand::DoActionGetFood();
+		DoActionGetFood();
 		TriggerStringHasBeenFound();
 	}
 	else if (strAction == "starve")
 	{
-		BasicNeedPersonCommand::DoActionStarve();
+		DoActionStarve();
 		TriggerStringHasBeenFound();
 	}
 	else if (strAction == "sleep")
 	{
-		BasicNeedPersonCommand::DoActionSleep();
+		DoActionSleep();
 		TriggerStringHasBeenFound();
 	}
 	else if (strAction == "collapse")
 	{
-		BasicNeedPersonCommand::DoActionCollapse();
+		DoActionCollapse();
 		TriggerStringHasBeenFound();
 	}
 	else if (strAction == "shit")
 	{
-		BasicNeedPersonCommand::DoActionShit();
+		DoActionShit();
 		TriggerStringHasBeenFound();
 	}
 }

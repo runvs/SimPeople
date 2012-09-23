@@ -44,9 +44,9 @@ Person::~Person(void)
 }
 
 
-void Person::AddNeed (INeed* pNeed)
+void Person::AddNeed (INeed* pNeed, int priority)
 {
-	Person::m_pNeedManager->AddNeed(pNeed, 1);
+	Person::m_pNeedManager->AddNeed(pNeed, priority);
 }
 
 void Person::Update ( float fTimeIncrement )

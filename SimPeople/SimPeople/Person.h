@@ -39,13 +39,14 @@ public:
 
 	void Update ( float fTimeIncrement );
 
-	void AddNeed (INeed* pNeed);
+	void AddNeed (INeed* pNeed, int priority);
 
 	inline void SetName (std::string strNewName) { m_strName = strNewName; };
 
 protected:
 	int m_iSatisfaction;
 	std::string m_strName;
+	inline NeedManager* GetNeedManager() {return m_pNeedManager;};
 	NeedManager* m_pNeedManager;
 };
 

@@ -69,7 +69,7 @@ namespace SimPeopleTest
 			INeed* t_pNeed = new INeed("SleepNeed");
 			t_pNeed->AddAction(0.5f, "sleep");
 			t_pNeed->SetTimeDependence(new TimeDependenceLinear());
-			t_pPerson->AddNeed(t_pNeed);
+			t_pPerson->AddNeed(t_pNeed, 5);
 			t_pPerson->Update(1.0f);
 			delete t_pPerson;
 		}
