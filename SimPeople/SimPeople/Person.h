@@ -21,7 +21,7 @@
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
 #pragma once
-#include "IPersonCommand.h"
+#include <string>
 
 
 namespace SimPeople
@@ -30,18 +30,22 @@ namespace SimPeople
 class NeedManager;
 class INeed;
 
+// This class is not intended to be used since it does not derive from a PersonCommandInterface and thus can not do any cool stuff
 class Person
 {
 public:
-	Person(IPersonCommand* PersonCommand);
+	Person();
 	virtual ~Person(void);
 
 	void Update ( float fTimeIncrement );
 
 	void AddNeed (INeed* pNeed);
+
+	inline void SetName (std::string strNewName) { m_strName = strNewName; };
+
 protected:
 	int m_iSatisfaction;
-	IPersonCommand* m_pPersonCommand;
+	std::string m_strName;
 	NeedManager* m_pNeedManager;
 };
 

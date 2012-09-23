@@ -29,25 +29,14 @@
 namespace SimPeople
 {
 
-Person::Person(IPersonCommand* PersonCommand)
+Person::Person()
 {
-	m_iSatisfaction = 0;
-	if ( PersonCommand == NULL )
-	{
-		throw Exceptions::NullPointerError();
-	}
-	m_pPersonCommand = PersonCommand;
-
-	m_pNeedManager = new NeedManager(m_pPersonCommand);
+	m_iSatisfaction = 1.0f;
 }
 
 
 Person::~Person(void)
 {
-	if (m_pPersonCommand != NULL )
-	{
-		delete m_pPersonCommand;
-	}
 	if (m_pNeedManager != NULL )
 	{
 		delete m_pNeedManager;

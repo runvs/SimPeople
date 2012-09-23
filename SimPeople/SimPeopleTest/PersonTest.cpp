@@ -43,7 +43,7 @@ namespace SimPeopleTest
 			Person* t_pPerson = NULL;
 			try
 			{
-				t_pPerson = new Person(NULL);
+				t_pPerson = new Person();
 			}
 			catch (SimPeople::Exceptions::NullPointerError)
 			{}
@@ -52,20 +52,20 @@ namespace SimPeopleTest
 				Assert::Fail(L"Wrong Exception",LINE_INFO());
 			}
 
-			t_pPerson = new Person(new BasicNeedPersonCommand(new IPersonCommand()));
+			t_pPerson = new Person();
 			delete t_pPerson;
 		}
 
 		TEST_METHOD(PersonUpdateTest)
 		{
-			Person* t_pPerson = new Person(new BasicNeedPersonCommand(new IPersonCommand()));
+			Person* t_pPerson = new Person();
 			t_pPerson->Update(1.0f);
 			delete t_pPerson;
 		}
 
 		TEST_METHOD(PersonDoActionTest)
 		{
-			Person* t_pPerson = new Person(new BasicNeedPersonCommand(new IPersonCommand()));
+			Person* t_pPerson = new Person();
 			INeed* t_pNeed = new INeed("SleepNeed");
 			t_pNeed->AddAction(0.5f, "sleep");
 			t_pNeed->SetTimeDependence(new TimeDependenceLinear());

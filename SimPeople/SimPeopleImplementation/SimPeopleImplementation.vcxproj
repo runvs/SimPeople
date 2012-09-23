@@ -72,9 +72,13 @@
   <ItemGroup>
     <ClCompile Include="..\SimPeople\TimeDependenceLinear.cpp" />
     <ClCompile Include="BasicNeedPersonCommand.cpp" />
+    <ClCompile Include="PersonFactory.cpp" />
+    <ClCompile Include="PersonWithNeeds.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicNeedPersonCommand.h" />
+    <ClInclude Include="PersonFactory.h" />
+    <ClInclude Include="PersonWithNeeds.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,13 +19,11 @@
 // http://sam.zoy.org/wtfpl/COPYING for more details. 
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
-
-#include "../SimPeople/Person.h"
-#include "../SimPeople/INeed.h"
-#include "../SimPeopleImplementation/BasicNeedPersonCommand.h"
-#include "../SimPeople/TimeDependenceLinear.h"
-
 #include <boost\ptr_container\ptr_vector.hpp>
+#include <exception>
+#include "..\SimPeopleImplementation/PersonFactory.h"
+#include "..\SimPeople\Person.h"
+
 
 using namespace SimPeople;
 
@@ -42,19 +40,27 @@ void DoUpdate ( boost::ptr_vector<Person>& vecPersons, float fTimeIncrement )
 
 int  main(int argc, char** argv)
 {
-	Person* t_pPerson = new Person(new BasicNeedPersonCommand(new IPersonCommand()));
-	INeed* t_pNeed = new INeed("SleepNeed");
-	t_pNeed->AddAction(0.5f, "sleep");
-	t_pNeed->SetTimeDependence(new TimeDependenceLinear());
-	t_pPerson->AddNeed(t_pNeed);
 	
+	Person* t_pPerson = NULL;
 	boost::ptr_vector<Person> g_vecPersons;
 
-	g_vecPersons.push_back(t_pPerson);
+	for (int i = 0; i < 5; ++i)	// create some Persons
+	{
+		try 
+		{
+			t_pPerson = PersonFactory::CreatePersonWithBasicNeeds();
+			g_vecPersons.push_back(t_pPerson);
+		}
+		catch (std::exception ex)
+		{
+			std::cout << ex.what() << std::endl;
+		}
+	}
+
 
 
 	float g_fTimeMax = 10.0f;
-	float g_fTimeIncrement = 0.001f;
+	float g_fTimeIncrement = 0.01f;
 	float g_fTimeNow = 0.0f;
 	for (g_fTimeNow = 0.0f; g_fTimeNow < g_fTimeMax; g_fTimeNow += g_fTimeIncrement)
 	{
@@ -62,5 +68,7 @@ int  main(int argc, char** argv)
 		//std::cout << "== TimeStep with Time " << g_fTimeNow << std::endl;
 	}
 
+	char a;
+	std::cin >> a;
 	return 0;
 }
