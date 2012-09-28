@@ -20,7 +20,8 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_ITIMEDEPENDENCE_H
+#define SIMPEOPLELIBRARY_ITIMEDEPENDENCE_H
 
 namespace SimPeople
 {
@@ -36,3 +37,5 @@ protected:
 };
 
 }
+
+#endif

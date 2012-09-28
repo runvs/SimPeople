@@ -20,7 +20,9 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_PERSON_H
+#define SIMPEOPLELIBRARY_PERSON_H
+
 #include <string>
 
 
@@ -51,3 +53,5 @@ protected:
 };
 
 }
+
+#endif

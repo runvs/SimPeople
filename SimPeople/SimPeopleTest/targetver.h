@@ -19,7 +19,8 @@
 // http://sam.zoy.org/wtfpl/COPYING for more details. 
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
-#pragma once
+#ifndef SIMPEOPLETEST_TARGETVER_H
+#define SIMPEOPLETEST_TARGETVER_H
 
 // Including SDKDDKVer.h defines the highest available Windows platform.
 
@@ -27,3 +28,5 @@
 // set the _WIN32_WINNT macro to the platform you wish to support before including SDKDDKVer.h.
 
 #include <SDKDDKVer.h>
+
+#endif

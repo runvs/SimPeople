@@ -21,7 +21,9 @@
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_SIMPEOPLEEXCEPTIONS_H
+#define SIMPEOPLELIBRARY_SIMPEOPLEEXCEPTIONS_H
+
 #include <boost/exception/all.hpp>
 
 namespace SimPeople
@@ -52,3 +54,5 @@ struct DistinctError : virtual LogicalError{};
 
 }
 }
+
+#endif

@@ -21,7 +21,8 @@
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_IPERSONCOMMAND_H
+#define SIMPEOPLELIBRARY_IPERSONCOMMAND_H
 
 #include <string>
 #include <vector>
@@ -75,3 +76,4 @@ private:
 
 }
 
+#endif

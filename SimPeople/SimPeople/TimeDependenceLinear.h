@@ -20,7 +20,9 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_TIMEDEPENDENCELINEAR_H
+#define SIMPEOPLELIBRARY_TIMEDEPENDENCELINEAR_H
+
 #include "ITimeDependence.h"
 
 
@@ -43,3 +45,5 @@ private:
 };
 
 }
+
+#endif

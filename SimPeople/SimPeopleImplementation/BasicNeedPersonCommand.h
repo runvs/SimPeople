@@ -20,7 +20,8 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLEIMPLEMENTATION_BASICNEEDPERSONCOMMAND_H
+#define SIMPEOPLEIMPLEMENTATION_BASICNEEDPERSONCOMMAND_H
 
 #include "..\SimPeople\IPersonCommand.h"
 
@@ -44,3 +45,5 @@ protected:
 	virtual void DoActionShit(void){std::cout << "Going For a shit" << std::endl;};
 };
 }
+
+#endif

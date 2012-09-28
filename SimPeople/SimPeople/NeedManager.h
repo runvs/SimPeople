@@ -20,7 +20,8 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_NEEDMANAGER_H
+#define SIMPEOPLELIBRARY_NEEDMANAGER_H
 
 #include <boost\ptr_container\ptr_map.hpp>
 
@@ -57,3 +58,5 @@ private:
 };
 
 }
+
+#endif

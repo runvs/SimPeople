@@ -25,7 +25,8 @@
 // are changed infrequently
 //
 
-#pragma once
+#ifndef SIMPEOPLETEST_STDAFX_H
+#define SIMPEOPLETEST_STDAFX_H
 
 #include "targetver.h"
 
@@ -33,3 +34,5 @@
 #include "CppUnitTest.h"
 
 // TODO: reference additional headers your program requires here
+
+#endif

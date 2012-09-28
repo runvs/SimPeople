@@ -20,7 +20,8 @@
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
-#pragma once
+#ifndef SIMPEOPLELIBRARY_INEED_H
+#define SIMPEOPLELIBRARY_INEED_H
 
 #include <string>
 #include <map>
@@ -64,3 +65,5 @@ private:
 };
 
 }
+
+#endif
