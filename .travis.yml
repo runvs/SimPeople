@@ -1,2 +1,2 @@
-install: ./getdependencies.sh
+install: make get-deps
 language: cpp
