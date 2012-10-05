@@ -1,3 +1,5 @@
 ﻿#!/bin/sh
-
-git submodules update --init
+mkdir make
+cd make
+cmake  -G "MinGW Makefiles" ../
+cd..
