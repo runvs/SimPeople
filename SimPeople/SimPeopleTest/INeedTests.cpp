@@ -23,9 +23,9 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../SimPeople/INeed.h"
-#include "../SimPeople/TimeDependenceLinear.h"
-#include "../SimPeople/SimPeopleExceptions.h"
+#include "../SimPeopleLibrary/INeed.h"
+#include "../SimPeopleLibrary/TimeDependenceLinear.h"
+#include "../SimPeopleLibrary/SimPeopleExceptions.h"
 
 	using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace SimPeople;

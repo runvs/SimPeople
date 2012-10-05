@@ -23,7 +23,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../SimPeople/TimeDependenceLinear.h"
+#include "../SimPeopleLibrary/TimeDependenceLinear.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace SimPeople;

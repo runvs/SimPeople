@@ -23,7 +23,7 @@
 #ifndef SIMPEOPLEIMPLEMENTATION_BASICNEEDPERSONCOMMAND_H
 #define SIMPEOPLEIMPLEMENTATION_BASICNEEDPERSONCOMMAND_H
 
-#include "..\SimPeople\IPersonCommand.h"
+#include "../SimPeopleLibrary/IPersonCommand.h"
 
 namespace SimPeople
 {

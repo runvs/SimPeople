@@ -23,7 +23,7 @@
 #ifndef SIMPEOPLEIMPLEMENTATION_PERSONWITHNEEDS_H
 #define SIMPEOPLEIMPLEMENTATION_PERSONWITHNEEDS_H
 
-#include "../SimPeople/Person.h"
+#include "../SimPeopleLibrary/Person.h"
 #include "BasicNeedPersonCommand.h"
 
 namespace SimPeople

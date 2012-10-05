@@ -23,11 +23,11 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include "../SimPeople/Person.h"
-#include "../SimPeople/INeed.h"
-#include "../SimPeople/SimPeopleExceptions.h"
+#include "../SimPeopleLibrary/Person.h"
+#include "../SimPeopleLibrary/INeed.h"
+#include "../SimPeopleLibrary/SimPeopleExceptions.h"
 #include "../SimPeopleImplementation/BasicNeedPersonCommand.h"
-#include "../SimPeople/TimeDependenceLinear.h"
+#include "../SimPeopleLibrary/TimeDependenceLinear.h"
 
 	using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace SimPeople;

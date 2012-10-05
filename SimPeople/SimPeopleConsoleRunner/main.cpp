@@ -19,10 +19,10 @@
 // http://sam.zoy.org/wtfpl/COPYING for more details. 
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
-#include <boost\ptr_container\ptr_vector.hpp>
+#include <boost/ptr_container/ptr_vector.hpp>
 #include <exception>
-#include "..\SimPeopleImplementation/PersonFactory.h"
-#include "..\SimPeople\Person.h"
+#include "../SimPeopleImplementation/PersonFactory.h"
+#include "../SimPeopleLibrary/Person.h"
 
 
 using namespace SimPeople;

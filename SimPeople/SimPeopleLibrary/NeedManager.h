@@ -23,7 +23,7 @@
 #ifndef SIMPEOPLELIBRARY_NEEDMANAGER_H
 #define SIMPEOPLELIBRARY_NEEDMANAGER_H
 
-#include <boost\ptr_container\ptr_map.hpp>
+#include <boost/ptr_container/ptr_map.hpp>
 
 
 namespace SimPeople
