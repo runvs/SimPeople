@@ -1,0 +1,5 @@
+file(GLOB CPPFILES  *.cpp)
+file(GLOB HPPFILES  *.h)
+add_executable (SimPeopleConsoleRunner ${CPPFILES} ${HPPFILES})
+target_link_libraries (SimPeopleConsoleRunner SimPeople)
+target_link_libraries (SimPeopleConsoleRunner SimPeopleImplementation)

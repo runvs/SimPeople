@@ -41,16 +41,7 @@ namespace SimPeopleTest
 		TEST_METHOD(PersonConstructorTest)
 		{
 			Person* t_pPerson = NULL;
-			try
-			{
-				t_pPerson = new Person();
-			}
-			catch (SimPeople::Exceptions::NullPointerError)
-			{}
-			catch(...)
-			{
-				Assert::Fail(L"Wrong Exception",LINE_INFO());
-			}
+
 
 			t_pPerson = new Person();
 			delete t_pPerson;
