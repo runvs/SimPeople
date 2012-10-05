@@ -168,3 +168,7 @@ CMakeFiles
 # now i want to ignore all sln and vcproj files since they must be created with the cmake bat files in the future
 *.sln
 *.vcxproj
+*.vcxproj.filters
+vs2012
+vs2010
+make
