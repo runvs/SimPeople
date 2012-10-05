@@ -4,3 +4,9 @@
 [submodule "ext/exception"]
 	path = ext/exception
 	url = git://github.com/boost-lib/exception.git
+[submodule "ext/conversion"]
+	path = ext/conversion
+	url = git://github.com/boost-lib/conversion.git
+[submodule "ext/config"]
+	path = ext/config
+	url = git://github.com/boost-lib/config.git
