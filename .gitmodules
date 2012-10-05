@@ -1,0 +1,6 @@
+[submodule "ext/ptr_container"]
+	path = ext/ptr_container
+	url = git://github.com/boost-lib/ptr_container.git
+[submodule "ext/exception"]
+	path = ext/exception
+	url = git://github.com/boost-lib/exception.git
