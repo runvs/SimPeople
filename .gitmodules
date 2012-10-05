@@ -1,27 +1,3 @@
-[submodule "ext/ptr_container"]
-	path = ext/ptr_container
-	url = git://github.com/boost-lib/ptr_container.git
-[submodule "ext/exception"]
-	path = ext/exception
-	url = git://github.com/boost-lib/exception.git
-[submodule "ext/conversion"]
-	path = ext/conversion
-	url = git://github.com/boost-lib/conversion.git
-[submodule "ext/config"]
-	path = ext/config
-	url = git://github.com/boost-lib/config.git
-[submodule "ext/iterator"]
-	path = ext/iterator
-	url = https://github.com/boost-lib/iterator.git
-[submodule "ext/units"]
-	path = ext/units
-	url = https://github.com/boost-lib/units.git
-[submodule "ext/static_assert"]
-	path = ext/static_assert
-	url = https://github.com/boost-lib/static_assert.git
-[submodule "ext/detail"]
-	path = ext/detail
-	url = git://gitorious.org/boost/detail.git
 [submodule "ext/svn"]
 	path = ext/svn
 	url = git://gitorious.org/boost/svn.git
