@@ -1,2 +1,2 @@
-install: getdependencies.sh
+install: ./getdependencies.sh
 language: cpp
