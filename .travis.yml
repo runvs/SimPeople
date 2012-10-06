@@ -1,3 +1,5 @@
-install: make get-deps
+before_install:
+    - sudo apt-get install libboost-dev
+    - cmake -G "Unix Makefiles"
 language: cpp
 script: "make"

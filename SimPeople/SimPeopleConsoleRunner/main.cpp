@@ -23,6 +23,7 @@
 #include <exception>
 #include "../SimPeopleImplementation/PersonFactory.h"
 #include "../SimPeopleLibrary/Person.h"
+#include <iostream>
 
 
 using namespace SimPeople;
