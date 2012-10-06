@@ -28,19 +28,23 @@
 namespace SimPeople
 {
 
+	// fwd declarations
 class Person;
+class INameGenerator;
+
 class PersonFactory
 {
 public:
 	PersonFactory(void);
 	~PersonFactory(void);
-	static Person* CreatePersonWithBasicNeeds (void);
+	Person* CreatePersonWithBasicNeeds (void);
+
 
 private:
-	static std::string CreateRandomName(void);
-	static void AddNeeds( Person* pPerson);
+	INameGenerator* m_pNameGenerator;
+	void AddNeeds( Person* pPerson);
 
-	static unsigned int m_uiNameCounter;
+	
 };
 
 }

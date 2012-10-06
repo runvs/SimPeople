@@ -41,7 +41,7 @@ void DoUpdate ( boost::ptr_vector<Person>& vecPersons, float fTimeIncrement )
 
 int  main(int argc, char** argv)
 {
-	
+	PersonFactory t_PersonFactory;
 	Person* t_pPerson = NULL;
 	boost::ptr_vector<Person> g_vecPersons;
 
@@ -49,7 +49,7 @@ int  main(int argc, char** argv)
 	{
 		try 
 		{
-			t_pPerson = PersonFactory::CreatePersonWithBasicNeeds();
+			t_pPerson = t_PersonFactory.CreatePersonWithBasicNeeds();
 			g_vecPersons.push_back(t_pPerson);
 		}
 		catch (std::exception ex)

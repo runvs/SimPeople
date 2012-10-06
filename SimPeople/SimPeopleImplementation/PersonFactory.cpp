@@ -26,63 +26,37 @@
 #include "PersonWithNeeds.h"
 #include "../SimPeopleLibrary/INeed.h"
 #include "../SimPeopleLibrary/TimeDependenceLinear.h"
+#include "NameGeneratorHardCoded.h";
 
 
 namespace SimPeople
 {
 
-unsigned int PersonFactory::m_uiNameCounter = 0;
+
 PersonFactory::PersonFactory(void)
 {
+	// replace this for any specific name Generator
+	PersonFactory::m_pNameGenerator = new NameGeneratorHardCoded();
+	
 }
 
 
 PersonFactory::~PersonFactory(void)
 {
+	if (PersonFactory::m_pNameGenerator != nullptr)
+	{
+		delete PersonFactory::m_pNameGenerator;
+	}
 }
 
 Person* PersonFactory::CreatePersonWithBasicNeeds ( void )
 {
 	Person* pPerson = new PersonWithNeeds();
-	pPerson->SetName(CreateRandomName());
+	pPerson->SetName(m_pNameGenerator->GetName());
 	AddNeeds(pPerson);
 
 	return pPerson;
 
-}
-
-
-std::string PersonFactory::CreateRandomName(void)
-{
-	std::string t_strReturn = "";
-	if (m_uiNameCounter%5 == 0 )
-	{
-		t_strReturn = "Paul";
-	}
-	else if (m_uiNameCounter%5 == 1 )
-	{
-		t_strReturn = "Gilbert";
-	}
-	else if (m_uiNameCounter%5 == 2 )
-	{
-		t_strReturn = "Jean";
-	}
-	else if (m_uiNameCounter%5 == 3 )
-	{
-		t_strReturn = "Linda";
-	}
-	else if (m_uiNameCounter%5 == 4 )
-	{
-		t_strReturn = "Julia";
-	}
-
-	if ( m_uiNameCounter > 5 )
-	{
-		t_strReturn += boost::lexical_cast<std::string>((m_uiNameCounter/5));
-	}
-
-	m_uiNameCounter++;
-	return t_strReturn;
 }
 
 
