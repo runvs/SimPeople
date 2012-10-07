@@ -27,7 +27,7 @@
 
 namespace SimPeople
 {
-INeed::INeed(std::string strNeedName)
+INeed::INeed(const std::string&  strNeedName)
 {
 	m_strName = strNeedName;
 	m_fCompletion = 1.0;

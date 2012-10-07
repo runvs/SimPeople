@@ -29,26 +29,42 @@
 
 namespace SimPeople
 {
+	// fwd decls
 class ITimeDependence;
 
+/// This is the basic Class for Needs. Though it is titled an interface it can be instantiated
 class INeed
 {
 public:
-	INeed(std::string strNeedName);
+	/// ctor, create a Need with the passed Name
+	INeed(const std::string& strNeedName);
+	
+	/// dtor (virtual for inheritance)
 	virtual ~INeed(void);
+
+	/// The Update Method
+	/// Uses the TimeDependance of the Need, sets the completion Values and checks for changes
 	void Update ( float fTimeIncrement );
 
+	/// Getter for the Need's name
 	inline std::string GetName  ( void ) const {return m_strName;};
+
+	/// Setter for the TimeDependance
 	void SetTimeDependence ( ITimeDependence* pTimeDependence );
 
+	/// This Method returns the Completion of the Need (must be in [0, 1] intervall)
 	inline float GetCompletion (void) const {return m_fCompletion; };
 
+	/// This Method changes the Completion by the passed Value. A check for a valid Completion Range is done [0, 1].
 	inline void ChangeCompletion (float fCompletionChange) {m_fCompletion += fCompletionChange; CheckCompletion();};
 
+	/// This Method returns the List of Actions that arose from the change of Completion
 	inline std::vector<std::string>& const GetActionList (void) { return m_vecListOfActions;};
 
+	/// This Method clears the ActionList so for the next frame there won't be any more actions to be done
 	inline void ClearActionList(void) {m_vecListOfActions.clear();};
 
+	/// This Method adds an Action String to a specific completion Value
 	void AddAction (float fCompletionValue, std::string strAction);
 
 private:
