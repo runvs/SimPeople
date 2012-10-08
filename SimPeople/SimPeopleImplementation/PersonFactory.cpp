@@ -21,12 +21,16 @@
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
 #include <boost/lexical_cast.hpp>
+#include<boost/random/uniform_real.hpp>
+#include<boost/random/variate_generator.hpp>
+
+#include "../SimPeopleLibrary/INeed.h"
+#include "../SimPeopleLibrary/TimeDependenceLinear.h"
 
 #include "PersonFactory.h"
 #include "PersonWithNeeds.h"
-#include "../SimPeopleLibrary/INeed.h"
-#include "../SimPeopleLibrary/TimeDependenceLinear.h"
 #include "NameGeneratorHardCoded.h";
+
 
 
 namespace SimPeople
@@ -59,21 +63,37 @@ Person* PersonFactory::CreatePersonWithBasicNeeds ( void )
 
 }
 
+float PersonFactory::GetRandomFloat(float min, float max)
+{
+    boost::uniform_real<float> distribution(min, max);
+    boost::variate_generator<boost::mt19937&, boost::uniform_real<float> > gen(gen, distribution);
+    return gen();
+}
+
 
 void PersonFactory::AddNeeds( Person* pPerson)
 {
+
+
 	INeed* t_pNeed = new INeed("SleepNeed");
-	t_pNeed->AddAction(0.33f, "sleep");
+	float t_fSleepThreshold = 0.33f + GetRandomFloat(-0.05f, 0.05f);
+	t_pNeed->AddAction(t_fSleepThreshold, "sleep");
 	t_pNeed->AddAction(0.01f, "collapse");
 	TimeDependenceLinear* t_pTimeDependance = new TimeDependenceLinear();
-	t_pTimeDependance->SetSlope(-0.623f);
+	float t_fSleepSlope = -0.623f + GetRandomFloat(-0.1f, 0.1f);
+	t_pTimeDependance->SetSlope(t_fSleepSlope);
 	t_pNeed->SetTimeDependence(t_pTimeDependance);
 	pPerson->AddNeed(t_pNeed, 12);
 
 	t_pNeed = new INeed("FoodNeed");
-	t_pNeed->AddAction(0.6f, "getfood");
-	t_pNeed->AddAction(0.2f, "starve");
+	float t_fFoodThreshold = 0.6f + GetRandomFloat(-0.1f, 0.1f);
+	t_pNeed->AddAction(t_fFoodThreshold, "getfood");
+	t_pNeed->AddAction(0.1f, "starve");
 	t_pNeed->SetTimeDependence(new TimeDependenceLinear());
+	t_pTimeDependance = new TimeDependenceLinear();
+	float t_fFooldSlope = -0.43f + GetRandomFloat(-0.2f, 0.2f);
+	t_pTimeDependance->SetSlope(t_fFooldSlope);
+	t_pNeed->SetTimeDependence(t_pTimeDependance);
 	pPerson->AddNeed(t_pNeed, 15);
 
 	t_pNeed = new INeed("ShitNeed");

@@ -24,6 +24,8 @@
 #define SIMPEOPLEIMPLEMENTATION_PERSONFACTORY_H
 
 #include <string>
+#include <boost/random/mersenne_twister.hpp>
+
 
 namespace SimPeople
 {
@@ -43,6 +45,10 @@ public:
 private:
 	INameGenerator* m_pNameGenerator;
 	void AddNeeds( Person* pPerson);
+
+	boost::random::mt19937 gen;		// could be encapsulated in a special object
+	float GetRandomFloat(float min, float max);
+
 
 	
 };
