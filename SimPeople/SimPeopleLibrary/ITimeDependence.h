@@ -26,13 +26,20 @@
 namespace SimPeople
 {
 
+	/// Basic Time Dependance Interface
 class ITimeDependence
 {
 protected: 
+	/// ctor 
+	/// Can not be called from outside since it is protected. Suffer your Life in Denial!
 	ITimeDependence(void);
 
-	public:
+public:
+		/// dtor
 	virtual ~ITimeDependence(void);
+
+	/// This Method updates the passed Value
+	/// overwrite in derived classes
 	virtual void UpdateValue(float& Value, float fTimeIncrement) = 0;
 };
 

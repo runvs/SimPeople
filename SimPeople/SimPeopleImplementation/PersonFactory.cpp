@@ -57,7 +57,7 @@ Person* PersonFactory::CreatePersonWithBasicNeeds ( void )
 {
 	Person* pPerson = new PersonWithNeeds();
 	pPerson->SetName(m_pNameGenerator->GetName());
-	AddNeeds(pPerson);
+	AddBasicNeeds(pPerson);
 
 	return pPerson;
 
@@ -71,10 +71,8 @@ float PersonFactory::GetRandomFloat(float min, float max)
 }
 
 
-void PersonFactory::AddNeeds( Person* pPerson)
+void PersonFactory::AddBasicNeeds( Person* pPerson)
 {
-
-
 	INeed* t_pNeed = new INeed("SleepNeed");
 	float t_fSleepThreshold = 0.33f + GetRandomFloat(-0.05f, 0.05f);
 	t_pNeed->AddAction(t_fSleepThreshold, "sleep");

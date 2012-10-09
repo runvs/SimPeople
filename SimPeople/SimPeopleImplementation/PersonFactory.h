@@ -34,23 +34,28 @@ namespace SimPeople
 class Person;
 class INameGenerator;
 
+/// This class is there to create all kinds of different Persons
 class PersonFactory
 {
 public:
+	/// ctor
 	PersonFactory(void);
+	/// dtor
 	~PersonFactory(void);
+	
+	/// Use this Method to create a Person wit Basic Needs
 	Person* CreatePersonWithBasicNeeds (void);
 
 
 private:
+	/// Pointer to a NameGenerator for the Persons to be created
 	INameGenerator* m_pNameGenerator;
-	void AddNeeds( Person* pPerson);
 
-	boost::random::mt19937 gen;		// could be encapsulated in a special object
+	/// This Method adds all basic Needs to a Person 
+	void AddBasicNeeds( Person* pPerson);
+
+	boost::random::mt19937 gen;		// rn generation must be encapsulated in a special object
 	float GetRandomFloat(float min, float max);
-
-
-	
 };
 
 }

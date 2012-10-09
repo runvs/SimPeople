@@ -28,14 +28,18 @@
 
 namespace SimPeople
 {
-
+	/// this is the first exampe implementation of a Person with Basic Needs. It is as simple as this
 class PersonWithNeeds :
 	public Person,
 	public BasicNeedPersonCommand
 {
 public:
+	/// ctor
 	PersonWithNeeds(void);
+	/// dtor
 	~PersonWithNeeds(void);
+
+	// just some Action Strings
 
 	void DoActionGetFood(void);
 	void DoActionStarve(void);

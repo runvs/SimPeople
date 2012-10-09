@@ -31,26 +31,39 @@
 
 namespace SimPeople
 {
+
+	/// Fundamental CommandInterface Use this class as a pointer in any Case you want do push commands to the persons
 class IPersonCommand
 {
 public:
+	/// ctor
 	IPersonCommand(void);
+	/// dtor
 	virtual ~IPersonCommand(void);
+
+	// This Method does an Action if called with the correct string.
+	// throws 
 	void DoAction(std::string strActionName);
 
+	/// This Method searches and Performs an Action by a string. Needs to be overwritten for any new String
 	virtual void SearchAndPerformAction(std::string strAction);
 protected:
+	/// Call this Method when the String has been Found and no more searches have to be done this time
 	inline void TriggerStringHasBeenFound(void) {m_bStringHasBeenFound = true;};
 
 private:
 	bool m_bStringHasBeenFound;
+
+	/// This Method checks if the ActionString has been found and executed. If not throws
 	void CheckForActionFound(std::string strAction);
 };
 
 
+/// Decorator Pattern so the Command Interfaces can be used together. This is no trivial shit
 class CommandInterfaceDecorator : public IPersonCommand
 {
 public:
+	/// ctor
 	CommandInterfaceDecorator(IPersonCommand* pCommandInterface)
 	{
 		if (pCommandInterface == NULL)
@@ -60,6 +73,7 @@ public:
 		m_pMyCommandInterface = pCommandInterface;
 	};
 
+	/// dtor
 	virtual ~CommandInterfaceDecorator()
 	{
 		if (m_pMyCommandInterface != NULL)
@@ -68,9 +82,11 @@ public:
 		}
 	}
 
+	/// needs to be overwritten
 	virtual void SearchAndPerformAction (std::string strAction);
 
 private:	
+	// storage for the inner PersonCommandInterface
 	IPersonCommand* m_pMyCommandInterface;
 };
 

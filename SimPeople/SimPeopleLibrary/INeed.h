@@ -69,6 +69,7 @@ public:
 
 private:
 
+	/// This Method checks the Completion of the Need and adds ActionStrings the the ListOfActions if the Threshold is crossed
 	void CheckCompletion();
 
 	float m_fCompletion;
@@ -77,6 +78,7 @@ private:
 	std::map<float, std::string> m_mapCompletionActionList;
 	std::vector<std::string> m_vecListOfActions;
 
+	/// Time Dependance for this specific Need
 	ITimeDependence* m_TimeDependece;
 };
 

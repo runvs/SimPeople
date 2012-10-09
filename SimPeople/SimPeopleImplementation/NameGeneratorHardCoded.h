@@ -10,7 +10,9 @@ class NameGeneratorHardCoded :
 	public INameGenerator
 {
 public:
+	/// ctor
 	NameGeneratorHardCoded(void);
+	/// dtor
 	~NameGeneratorHardCoded(void);
 protected:
 	/// this Method does the work for creating the names

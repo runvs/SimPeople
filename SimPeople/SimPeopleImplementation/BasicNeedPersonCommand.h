@@ -27,17 +27,22 @@
 
 namespace SimPeople
 {
+	/// This class is the representation of the BasicNeed Command interface
+	/// It is derived from the CommandInterfaceDecorator so it is compatible with any other decorator Command interface
 class BasicNeedPersonCommand :
 	public CommandInterfaceDecorator
 {
 public:
+	/// ctor
 	BasicNeedPersonCommand(IPersonCommand* pCommandInterface);
+	/// dtor
 	~BasicNeedPersonCommand(void);
 private:
+	/// This Method searches for the String and performs the action if it has been found.
 	void SearchAndPerformAction (std::string strAction);
 
 protected:
-	// Basic Implementations. Pleas Override in your derived classes
+	// Basic Implementations for console Output. Pleas Override in your derived classes
 	virtual void DoActionGetFood(void){std::cout << "Getting Food" << std::endl;};
 	virtual void DoActionStarve(void){std::cout << "Starve" << std::endl;};
 	virtual void DoActionSleep(void){std::cout << "Sleep" << std::endl;};
