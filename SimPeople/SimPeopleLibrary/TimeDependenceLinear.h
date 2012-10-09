@@ -28,7 +28,7 @@
 
 namespace SimPeople
 {
-
+/// Implementation of the Time Dependance for Linear Behaviour
 class TimeDependenceLinear :
 	public ITimeDependence
 {

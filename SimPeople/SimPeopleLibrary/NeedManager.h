@@ -45,12 +45,12 @@ public:
 
 	/// dtor
 	~NeedManager(void);
+	
+	/// This Method pics a Need by a String and changes its Completion
+	void ChangeNeedCompletion(std::string strNeedName, float fChange);
 
 	/// Setter for the PersonCommandInterface
 	void SetPersonCommandInterface ( IPersonCommand* PersonCommand);
-
-	/// This Method pics a Need by a String and changes its Completion
-	void ChangeNeedCompletion(std::string strNeedName, float fChange);
 
 	/// This Method Adds a Need to the NeedManager
 	void AddNeed(INeed* pNeed, int iPriority);
@@ -60,6 +60,7 @@ public:
 
 private:
 	boost::ptr_map<int, INeed> m_mapPriorityNeedsMap;
+	IPersonCommand* m_PersonCommand;
 
 	/// This Method Checks All needs
 	/// It gets the Actions from the Needs list and handles them to the CommandInterface
@@ -67,8 +68,6 @@ private:
 	
 	/// This Method updates the Timing of the Needs and thus sets the local Actionlists in the strings
 	void UpdateNeeds(float fTimeIncrement );
-
-	IPersonCommand* m_PersonCommand;
 
 	/// Check if a Need is present in the NeedManager
 	bool ContainsNeed ( INeed* pNeed) const;

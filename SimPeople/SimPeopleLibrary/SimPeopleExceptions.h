@@ -30,14 +30,23 @@ namespace SimPeople
 {
 namespace Exceptions
 {
+/// basic Exception. Derive from this for all SimPeople Exceptions
 struct ExceptionBase: virtual std::exception, virtual boost::exception { };
 
+/// IO Error Exception. Use this for FileNotFoud, wrong input Type, wrong cmdl arguments, invalid data types
 struct IOError: virtual ExceptionBase { };
 
+
+/// Basic Exception for all Pointer Errors
 struct PointerError : virtual ExceptionBase {};
+
+/// Special Exception if a Pointer is NULL
 struct NullPointerError : virtual PointerError{};
 
+/// Basic Exception for Wrong Arguments
 struct ArgumentError : virtual ExceptionBase {};
+
+/// Special Exception for unknown Strings
 struct UnkownStringError : virtual ArgumentError 
 {
 public:
@@ -46,10 +55,14 @@ public:
 private:
 	std::string m_strUnknownString;
 };
+
+/// Special Exception for wrong Completion Values
 struct CompletionError : virtual ArgumentError {};
 
+/// Logical Error for things that might not be (race conditions, etc)
 struct LogicalError: virtual ExceptionBase{};
 
+/// Error if some distinct Values are not distinct
 struct DistinctError : virtual LogicalError{};
 
 }

@@ -32,23 +32,39 @@ namespace SimPeople
 class NeedManager;
 class INeed;
 
-// This class is not intended to be used since it does not derive from a PersonCommandInterface and thus can not do any cool stuff
+/// Class for a basic Person. Overwrite for special purposes
+/// This class is not intended to be used since it does not derive from a PersonCommandInterface and thus can not do any cool stuff
 class Person
 {
 public:
+
+	/// ctor
 	Person();
+
+	/// dtor
 	virtual ~Person(void);
 
+	/// This Method Updates all the necessary Parts of the Person
 	void Update ( float fTimeIncrement );
 
+	/// This Methos Adds a Need to the Person
 	void AddNeed (INeed* pNeed, int priority);
 
+	/// Setter for the Name of the Person
 	inline void SetName (std::string strNewName) { m_strName = strNewName; };
 
 protected:
+
+	/// global satisfaction Value
 	int m_iSatisfaction;
+
+	/// the person's name
 	std::string m_strName;
+
+	/// Getter fpr the NeedManager
 	inline NeedManager* GetNeedManager() {return m_pNeedManager;};
+
+	/// the NeedManager
 	NeedManager* m_pNeedManager;
 };
 
