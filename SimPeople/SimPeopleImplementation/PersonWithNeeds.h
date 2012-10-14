@@ -46,6 +46,8 @@ public:
 	void DoActionSleep(void);
 	void DoActionCollapse(void);
 	void DoActionShit(void);
+
+
 };
 
 }

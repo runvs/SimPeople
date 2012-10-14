@@ -54,4 +54,15 @@ void Person::Update ( float fTimeIncrement )
 	Person::m_pNeedManager->Update(fTimeIncrement);
 }
 
+void Person::SlowDownNeedTiming(const float fFactor)
+{
+	Person::m_pNeedManager->MuliplyNeedsTimingFactor(0.5f);
+}
+
+
+void Person::ResetNeedTiming(void)
+{
+	Person::m_pNeedManager->ResetNeedsTimingFactor();
+}
+
 }

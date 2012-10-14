@@ -52,6 +52,7 @@ void PersonWithNeeds::DoActionSleep(void)
 {
 	std::cout << m_strName << " is getting some sleep" << std::endl;
 	PersonWithNeeds::GetNeedManager()->ChangeNeedCompletion("SleepNeed", 1);	// just assume sleepneed is completely satisfied
+
 };
 
 void PersonWithNeeds::DoActionCollapse(void)
@@ -64,4 +65,7 @@ void PersonWithNeeds::DoActionShit(void)
 	std::cout << m_strName <<  " is going For a shit" << std::endl;
 	PersonWithNeeds::GetNeedManager()->ChangeNeedCompletion("ShitNeed", 1);	// just assume shitneed is completely satisfied
 };
+
+
+
 }

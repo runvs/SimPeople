@@ -66,6 +66,12 @@ protected:
 
 	/// the NeedManager
 	NeedManager* m_pNeedManager;
+	
+	/// Slow down Need Timing (eg. if person is going to sleep all other needs will be decreasing slower)
+	void SlowDownNeedTiming(const float fFactor);
+
+	/// Reset the Need Timing (eg. the Person wakes up again)
+	void ResetNeedTiming(void);
 };
 
 }

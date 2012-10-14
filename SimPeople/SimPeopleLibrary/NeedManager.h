@@ -58,6 +58,18 @@ public:
 	/// This Method Updated all Needs
 	void Update ( float fTimeIncrement );
 
+	/// Getter For The Timing Factor
+	inline float GetNeedsTimingFactor ( void ) const { return m_fNeedsTimingFactor; };
+
+	/// Setter for the Timing Factor
+	inline void SetNeedsTimingFactor ( const float fFactor) {m_fNeedsTimingFactor = fFactor;};
+
+	/// Multiply Timing Factor
+	inline void MuliplyNeedsTimingFactor ( const float fFactor) {m_fNeedsTimingFactor *= fFactor;};
+
+	/// Reset the Timing Factor Value to 1.0
+	inline void ResetNeedsTimingFactor ( void ) {m_fNeedsTimingFactor = 1.0;};
+
 private:
 	boost::ptr_map<int, INeed> m_mapPriorityNeedsMap;
 	IPersonCommand* m_PersonCommand;
@@ -80,6 +92,9 @@ private:
 
 	/// Get a Need by its String (as a Pointer). Should be used Rarely
 	INeed* GetNeedByName (std::string strNeedName);
+
+	/// Timing Factor for Need Updates. This will allow you to globally change the timing behavour for all Needs managed here
+	float m_fNeedsTimingFactor;
 };
 
 }

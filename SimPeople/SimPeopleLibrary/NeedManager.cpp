@@ -34,6 +34,7 @@ NeedManager::NeedManager(IPersonCommand* pPersonCommand)
 
 NeedManager::NeedManager(void)
 {
+	NeedManager::m_fNeedsTimingFactor = 1;
 }
 
 
@@ -78,12 +79,16 @@ void NeedManager::CheckNeeds(void)
 
 void NeedManager::UpdateNeeds(float fTimeIncrement )
 {
-		boost::ptr_map<int, INeed>::iterator t_it;
+	// this is the actual timing increment for updating the Needs since there might be a change in the Timing Factor
+	float t_fUpdateTimeIncrement = fTimeIncrement * NeedManager::m_fNeedsTimingFactor;	
+
+	boost::ptr_map<int, INeed>::iterator t_it;
+	// loop over all Needs
 	for (	t_it = NeedManager::m_mapPriorityNeedsMap.begin();
 			t_it != NeedManager::m_mapPriorityNeedsMap.end();
 			++t_it)
 	{
-		t_it->second->Update(fTimeIncrement);
+		t_it->second->Update(t_fUpdateTimeIncrement);
 	}
 }
 
