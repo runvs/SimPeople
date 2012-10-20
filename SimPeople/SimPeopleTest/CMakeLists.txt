@@ -1,5 +1,5 @@
 file(GLOB CPPFILES  *.cpp)
 file(GLOB HPPFILES  *.h)
-add_library (SimPeopleTest ${CPPFILES} ${HPPFILES})
+add_executable (SimPeopleTest ${CPPFILES} ${HPPFILES})
 target_link_libraries (SimPeopleTest SimPeopleLibrary)
 target_link_libraries (SimPeopleTest SimPeopleImplementation)

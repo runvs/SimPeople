@@ -7,5 +7,5 @@ SET (LIBRARY_OUTPUT_PATH
 include_directories ("ext/svn/")
 add_subdirectory (SimPeople/SimPeopleLibrary)
 add_subdirectory (SimPeople/SimPeopleImplementation)
-#add_subdirectory (SimPeople/SimPeopleTest)
+add_subdirectory (SimPeople/SimPeopleTest)
 add_subdirectory (SimPeople/SimPeopleConsoleRunner)
