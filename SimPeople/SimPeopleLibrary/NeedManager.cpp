@@ -30,6 +30,7 @@ namespace SimPeople
 NeedManager::NeedManager(IPersonCommand* pPersonCommand)
 {
 	NeedManager::SetPersonCommandInterface(pPersonCommand);
+	NeedManager::m_fNeedsTimingFactor = 1;
 }
 
 NeedManager::NeedManager(void)

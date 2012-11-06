@@ -21,67 +21,65 @@
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
 #include "stdafx.h"
-#include "CppUnitTest.h"
 
 #include "../SimPeopleLibrary/TimeDependenceLinear.h"
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace SimPeople;
 
 namespace SimPeopleTest
 {		
-	TEST_CLASS(TimeDependeceTest)
-	{
-	public:
-		
-		TEST_METHOD(TimeDependenceLinearNormalBehaviourTest)
-		{
-			TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
-			t_pTimeDependenceLinear = new TimeDependenceLinear();
-			t_pTimeDependenceLinear->SetSlope(-1);
+	//TEST_CLASS(TimeDependeceTest)
+	//{
+	//public:
+	//	
+	//	TEST_METHOD(TimeDependenceLinearNormalBehaviourTest)
+	//	{
+	//		TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
+	//		t_pTimeDependenceLinear = new TimeDependenceLinear();
+	//		t_pTimeDependenceLinear->SetSlope(-1);
 
-			float f = 5.0f;
-			t_pTimeDependenceLinear->UpdateValue(f, 1.0);
-			Assert::AreEqual(f, 4.0f);
+	//		float f = 5.0f;
+	//		t_pTimeDependenceLinear->UpdateValue(f, 1.0);
+	//		Assert::AreEqual(f, 4.0f);
 
-			t_pTimeDependenceLinear->UpdateValue(f, 1.0);
-			Assert::AreEqual(f, 3.0f);
+	//		t_pTimeDependenceLinear->UpdateValue(f, 1.0);
+	//		Assert::AreEqual(f, 3.0f);
 
-			t_pTimeDependenceLinear->SetSlope(-1.5);
-			f = 3.5f;
-			t_pTimeDependenceLinear->UpdateValue(f, 1.0);
-			Assert::AreEqual(f, 2.0f);
+	//		t_pTimeDependenceLinear->SetSlope(-1.5);
+	//		f = 3.5f;
+	//		t_pTimeDependenceLinear->UpdateValue(f, 1.0);
+	//		Assert::AreEqual(f, 2.0f);
 
-			f = 3.5f;
-			t_pTimeDependenceLinear->UpdateValue(f, 2.0);
-			Assert::AreEqual(f, 0.5f);
+	//		f = 3.5f;
+	//		t_pTimeDependenceLinear->UpdateValue(f, 2.0);
+	//		Assert::AreEqual(f, 0.5f);
 
-			delete t_pTimeDependenceLinear;
-		}
+	//		delete t_pTimeDependenceLinear;
+	//	}
 
-		TEST_METHOD(TimeDependenceLinearNegativeTest)
-		{
-			TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
-			t_pTimeDependenceLinear = new TimeDependenceLinear();
-			t_pTimeDependenceLinear->SetSlope(-1);
+	//	TEST_METHOD(TimeDependenceLinearNegativeTest)
+	//	{
+	//		TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
+	//		t_pTimeDependenceLinear = new TimeDependenceLinear();
+	//		t_pTimeDependenceLinear->SetSlope(-1);
 
-			float f = -1.0f;
-			t_pTimeDependenceLinear->UpdateValue(f, 1.0);
-			Assert::AreEqual(f, 0.0f);
+	//		float f = -1.0f;
+	//		t_pTimeDependenceLinear->UpdateValue(f, 1.0);
+	//		Assert::AreEqual(f, 0.0f);
 
-			delete t_pTimeDependenceLinear;
-		}
+	//		delete t_pTimeDependenceLinear;
+	//	}
 
-		TEST_METHOD(TimeDependenceLinearZeroTest)
-		{
-			TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
-			t_pTimeDependenceLinear = new TimeDependenceLinear();
-			t_pTimeDependenceLinear->SetSlope(-1);
-			float f = 0.0f;
-			t_pTimeDependenceLinear->UpdateValue(f, 1.0);
-			Assert::AreEqual(f, 0.0f);
+	//	TEST_METHOD(TimeDependenceLinearZeroTest)
+	//	{
+	//		TimeDependenceLinear* t_pTimeDependenceLinear = NULL;
+	//		t_pTimeDependenceLinear = new TimeDependenceLinear();
+	//		t_pTimeDependenceLinear->SetSlope(-1);
+	//		float f = 0.0f;
+	//		t_pTimeDependenceLinear->UpdateValue(f, 1.0);
+	//		Assert::AreEqual(f, 0.0f);
 
-			delete t_pTimeDependenceLinear;
-		}
-	};
+	//		delete t_pTimeDependenceLinear;
+	//	}
+	//};
 }

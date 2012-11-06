@@ -72,6 +72,8 @@ protected:
 
 	/// Reset the Need Timing (eg. the Person wakes up again)
 	void ResetNeedTiming(void);
+
+
 };
 
 }

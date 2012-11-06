@@ -32,6 +32,7 @@ namespace SimPeople
 Person::Person()
 {
 	m_iSatisfaction = 1.0f;
+	m_pNeedManager = NULL;
 }
 
 
@@ -51,6 +52,10 @@ void Person::AddNeed (INeed* pNeed, int priority)
 
 void Person::Update ( float fTimeIncrement )
 {
+	if ( Person::m_pNeedManager == NULL )
+	{
+		throw SimPeople::Exceptions::NullPointerError();
+	}
 	Person::m_pNeedManager->Update(fTimeIncrement);
 }
 

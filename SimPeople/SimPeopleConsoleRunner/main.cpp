@@ -66,7 +66,7 @@ int  main(int argc, char** argv)
 	for (g_fTimeNow = 0.0f; g_fTimeNow < g_fTimeMax; g_fTimeNow += g_fTimeIncrement)
 	{
 		DoUpdate(g_vecPersons, g_fTimeIncrement);
-		std::cout << "== TimeStep with Time " << g_fTimeNow << std::endl;
+		//std::cout << "== TimeStep with Time " << g_fTimeNow << std::endl;
 	}
 
 	char a;

@@ -28,7 +28,6 @@ PersonWithNeeds::PersonWithNeeds(void) :
 	BasicNeedPersonCommand((new IPersonCommand()))
 {
 	m_strName = "Paul";
-
 	PersonWithNeeds::m_pNeedManager = new NeedManager(this);
 }
 

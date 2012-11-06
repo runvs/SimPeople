@@ -29,8 +29,9 @@
 
 #include "PersonFactory.h"
 #include "PersonWithNeeds.h"
-#include "NameGeneratorHardCoded.h";
 
+//#include "NameGeneratorHardCoded.h";
+#include "NameGeneratorFromFiles.h"
 
 
 namespace SimPeople
@@ -40,7 +41,8 @@ namespace SimPeople
 PersonFactory::PersonFactory(void)
 {
 	// replace this for any specific name Generator
-	PersonFactory::m_pNameGenerator = new NameGeneratorHardCoded();
+	PersonFactory::m_pNameGenerator = new NameGeneratorFromFiles();
+	dynamic_cast<SimPeople::NameGeneratorFromFiles*>(m_pNameGenerator)->LoadNamesFromFiles();
 	
 }
 
