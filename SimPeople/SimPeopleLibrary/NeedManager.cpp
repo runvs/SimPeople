@@ -1,14 +1,14 @@
-// DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-// Version 2, December 2004 
+// DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+// Version 2, December 2004
 
-// Copyright (C) 2012 Sam Hocevar <sam@hocevar.net> 
+// Copyright (C) 2012 Sam Hocevar <sam@hocevar.net>
 
-// Everyone is permitted to copy and distribute verbatim or modified 
-// copies of this license document, and changing it is allowed as long 
-// as the name is changed. 
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
 
-// DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
-// TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+// DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+// TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
 // 0. You just DO WHAT THE FUCK YOU WANT TO.
 
@@ -16,7 +16,7 @@
 // the extent permitted by applicable law. You can redistribute it
 // and/or modify it under the terms of the Do What The Fuck You Want
 // To Public License, Version 2, as published by Sam Hocevar. See
-// http://sam.zoy.org/wtfpl/COPYING for more details. 
+// http://sam.zoy.org/wtfpl/COPYING for more details.
 
 // This File is part of the SimPeople Project done by Julian Dinges and Simon Weis
 
@@ -73,7 +73,7 @@ void NeedManager::CheckNeeds(void)
 			m_PersonCommand->DoAction(t_it->second->GetActionList().back());		// Do the Action
 			t_it->second->GetActionList().pop_back();								// Delete the last element in the cue
 		}
-		
+
 		t_it->second->ClearActionList();	// just make sure there are no action strings left
 	}
 }
@@ -81,7 +81,7 @@ void NeedManager::CheckNeeds(void)
 void NeedManager::UpdateNeeds(float fTimeIncrement )
 {
 	// this is the actual timing increment for updating the Needs since there might be a change in the Timing Factor
-	float t_fUpdateTimeIncrement = fTimeIncrement * NeedManager::m_fNeedsTimingFactor;	
+	float t_fUpdateTimeIncrement = fTimeIncrement * NeedManager::m_fNeedsTimingFactor;
 
 	boost::ptr_map<int, INeed>::iterator t_it;
 	// loop over all Needs
