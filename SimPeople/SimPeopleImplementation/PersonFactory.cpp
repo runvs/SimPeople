@@ -42,7 +42,15 @@ PersonFactory::PersonFactory(void)
 {
 	// replace this for any specific name Generator
 	PersonFactory::m_pNameGenerator = new NameGeneratorFromFiles();
-	dynamic_cast<SimPeople::NameGeneratorFromFiles*>(m_pNameGenerator)->LoadNamesFromFiles();
+	try
+	{
+		dynamic_cast<SimPeople::NameGeneratorFromFiles*>(m_pNameGenerator)->LoadNamesFromFiles();
+	}
+	catch ( SimPeople::Exceptions::IOError)
+	{
+		// add some more Data 
+		throw;
+	}
 	
 }
 

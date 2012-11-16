@@ -41,15 +41,26 @@ void DoUpdate ( boost::ptr_vector<Person>& vecPersons, float fTimeIncrement )
 
 int  main(int argc, char** argv)
 {
-	PersonFactory t_PersonFactory;
+	PersonFactory* t_PersonFactory = NULL;
 	Person* t_pPerson = NULL;
 	boost::ptr_vector<Person> g_vecPersons;
+
+			try 
+		{
+			t_PersonFactory = new SimPeople::PersonFactory();
+		}
+		catch (std::exception ex)
+		{
+			std::cout << ex.what() << std::endl;
+			exit(1);
+		}
+
 
 	for (int i = 0; i < 5; ++i)	// create some Persons
 	{
 		try 
 		{
-			t_pPerson = t_PersonFactory.CreatePersonWithBasicNeeds();
+			t_pPerson = t_PersonFactory->CreatePersonWithBasicNeeds();
 			g_vecPersons.push_back(t_pPerson);
 		}
 		catch (std::exception ex)
