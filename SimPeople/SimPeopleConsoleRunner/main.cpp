@@ -41,20 +41,26 @@ void DoUpdate ( boost::ptr_vector<Person>& vecPersons, float fTimeIncrement )
 
 int  main(int argc, char** argv)
 {
+	// create the person Factory
 	PersonFactory* t_PersonFactory = NULL;
+	
+	// try creating a PersonFactory
+	try
+	{
+		t_PersonFactory = new SimPeople::PersonFactory();
+	}
+	catch (std::exception ex)
+	{
+		std::cout << ex.what() << std::endl;
+		// if this fails, exit straight away
+		exit(1);
+	}
+
+	// a Persons Pointer to store new Persons in it
 	Person* t_pPerson = NULL;
+
+	// a Boost Container for storing Persons.
 	boost::ptr_vector<Person> g_vecPersons;
-
-			try
-		{
-			t_PersonFactory = new SimPeople::PersonFactory();
-		}
-		catch (std::exception ex)
-		{
-			std::cout << ex.what() << std::endl;
-			exit(1);
-		}
-
 
 	for (int i = 0; i < 5; ++i)	// create some Persons
 	{
@@ -74,13 +80,23 @@ int  main(int argc, char** argv)
 	float g_fTimeMax = 10.0f;
 	float g_fTimeIncrement = 0.01f;
 	float g_fTimeNow = 0.0f;
-	for (g_fTimeNow = 0.0f; g_fTimeNow < g_fTimeMax; g_fTimeNow += g_fTimeIncrement)
+
+	// Update Time and let it run for some Time
+	try 
 	{
-		DoUpdate(g_vecPersons, g_fTimeIncrement);
-		//std::cout << "== TimeStep with Time " << g_fTimeNow << std::endl;
+		for (g_fTimeNow = 0.0f; g_fTimeNow < g_fTimeMax; g_fTimeNow += g_fTimeIncrement)
+		{
+			DoUpdate(g_vecPersons, g_fTimeIncrement);
+		}
+	}
+	catch ( std::exception ex)
+	{
+		std::cout << ex.what() << std::endl;
 	}
 
+	// just wait for the user to press a key
 	char a;
 	std::cin >> a;
+
 	return 0;
 }

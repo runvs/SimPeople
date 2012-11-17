@@ -43,7 +43,8 @@ public:
 	/// dtor
 	~PersonFactory(void);
 
-	/// Use this Method to create a Person wit Basic Needs
+	/// \brief Use this Method to create a Person wit Basic Needs
+	/// Since this is a factory, this Method calls new and the scope calling this method is responsible for freeing the data
 	Person* CreatePersonWithBasicNeeds (void);
 
 

@@ -65,7 +65,9 @@ PersonFactory::~PersonFactory(void)
 
 Person* PersonFactory::CreatePersonWithBasicNeeds ( void )
 {
+	// Pointer is created here but since this is a factory, the calling structure is responsible for the data
 	Person* pPerson = new PersonWithNeeds();
+
 	pPerson->SetName(m_pNameGenerator->GetName());
 	AddBasicNeeds(pPerson);
 
