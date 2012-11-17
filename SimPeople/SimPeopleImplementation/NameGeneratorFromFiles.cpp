@@ -77,7 +77,7 @@ void NameGeneratorFromFiles::LoadNamesFromFiles ( std::string strNameFilePath)
 	for(std::string t_strName; std::getline(t_istrmNameFileStream, t_strName); )
 	{
 		//std::cout << "Processed line " << t_strName << '\n';
-		if ( !boost::starts_with(t_strName, "#") && ! boost::starts_with(t_strName, "//") )
+		if ( !boost::starts_with(t_strName, "#") && ! boost::starts_with(t_strName, "//") && t_strName != "" )
 		{
 			m_vecFirstNames.push_back(t_strName);
 		}
