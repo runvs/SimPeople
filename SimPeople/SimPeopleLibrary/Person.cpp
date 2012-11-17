@@ -31,7 +31,7 @@ namespace SimPeople
 
 Person::Person()
 {
-	m_iSatisfaction = 1.0f;
+	m_iSatisfaction = 1;
 	m_pNeedManager = NULL;
 }
 
