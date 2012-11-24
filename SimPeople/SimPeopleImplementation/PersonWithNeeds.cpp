@@ -22,6 +22,7 @@
 
 #include "PersonWithNeeds.h"
 #include "../SimPeopleLibrary/NeedManager.h"
+#include "../SimPeopleLibrary/INeed.h"
 namespace SimPeople
 {
 PersonWithNeeds::PersonWithNeeds(void) :

@@ -38,6 +38,10 @@ class IPersonCommand
 public:
 	/// ctor
 	IPersonCommand(void);
+
+	/// cctor
+	IPersonCommand( volatile const IPersonCommand& other ) {};
+
 	/// dtor
 	virtual ~IPersonCommand(void);
 

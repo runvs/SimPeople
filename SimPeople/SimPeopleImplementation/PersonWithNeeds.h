@@ -36,6 +36,7 @@ class PersonWithNeeds :
 public:
 	/// ctor
 	PersonWithNeeds(void);
+
 	/// dtor
 	~PersonWithNeeds(void);
 

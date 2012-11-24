@@ -43,6 +43,9 @@ public:
 	/// ctor with specific CommandInterface
 	NeedManager(IPersonCommand* pPersonCommand);
 
+	/// cctor
+	NeedManager( volatile const NeedManager& other ) {};
+
 	/// dtor
 	~NeedManager(void);
 

@@ -33,11 +33,19 @@ class TimeDependenceLinear :
 	public ITimeDependence
 {
 public:
+	/// ctor
 	TimeDependenceLinear(void);
+
+	/// cctor
+	TimeDependenceLinear( volatile const TimeDependenceLinear& other ) {};
+
+	/// dtor
 	~TimeDependenceLinear(void);
 
+	/// update the passed Value depending on the passed Time increment
 	virtual void UpdateValue(float& Value, float fTimeIncrement);
 
+	/// set the Slope of the TimeDependence
 	inline void SetSlope ( float Slope) {m_fSlope = Slope; };
 
 private:

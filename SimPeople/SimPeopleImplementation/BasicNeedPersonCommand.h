@@ -35,6 +35,7 @@ class BasicNeedPersonCommand :
 public:
 	/// ctor
 	BasicNeedPersonCommand(IPersonCommand* pCommandInterface);
+
 	/// dtor
 	~BasicNeedPersonCommand(void);
 private:

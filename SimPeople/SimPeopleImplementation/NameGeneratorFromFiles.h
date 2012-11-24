@@ -38,6 +38,9 @@ class NameGeneratorFromFiles :
 public:
 	/// ctor
 	NameGeneratorFromFiles(void);
+
+	/// cctor
+	NameGeneratorFromFiles( volatile const NameGeneratorFromFiles& other ) {};
 	/// dtor
 	~NameGeneratorFromFiles(void);
 

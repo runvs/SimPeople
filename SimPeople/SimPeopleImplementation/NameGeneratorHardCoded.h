@@ -34,6 +34,10 @@ class NameGeneratorHardCoded :
 public:
 	/// ctor
 	NameGeneratorHardCoded(void);
+
+	/// cctor
+	NameGeneratorHardCoded( volatile const NameGeneratorHardCoded& other ) {};
+
 	/// dtor
 	~NameGeneratorHardCoded(void);
 protected:

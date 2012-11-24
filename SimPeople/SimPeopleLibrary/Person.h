@@ -41,6 +41,9 @@ public:
 	/// ctor
 	Person();
 
+	/// cctor
+	Person( volatile const Person& other ) {};
+
 	/// dtor
 	virtual ~Person(void);
 

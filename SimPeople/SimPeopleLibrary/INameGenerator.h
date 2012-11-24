@@ -35,6 +35,10 @@ class INameGenerator
 public:
 	/// default ctor
 	INameGenerator(void);
+
+	/// cctor
+	INameGenerator( volatile const INameGenerator& other ) {};
+
 	/// default dtor (virtual for inheritance reasons)
 	virtual ~INameGenerator(void);
 

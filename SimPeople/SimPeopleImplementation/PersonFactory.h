@@ -40,6 +40,10 @@ class PersonFactory
 public:
 	/// ctor
 	PersonFactory(void);
+
+	/// cctor
+	PersonFactory( volatile const PersonFactory& other ) {};
+
 	/// dtor
 	~PersonFactory(void);
 

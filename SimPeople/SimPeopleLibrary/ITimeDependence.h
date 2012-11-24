@@ -34,6 +34,10 @@ protected:
 	/// Can not be called from outside since it is protected. Suffer your Life in Denial!
 	ITimeDependence(void);
 
+	/// cctor
+	/// Can not be called from outside since it is protected. Suffer your Life in Denial!
+	ITimeDependence( volatile const ITimeDependence& other ) {};
+
 public:
 		/// dtor
 	virtual ~ITimeDependence(void);
